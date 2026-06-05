@@ -33,7 +33,7 @@ public class JobsPage implements InventoryHolder {
     private Material jobToMaterialEnum(String job){
         return switch (job){
             case "Miner" -> Material.NETHERITE_PICKAXE;
-            case "Fisher" -> Material.FISHING_ROD;
+            case "Fisherman" -> Material.FISHING_ROD;
             case "Warrior" -> Material.NETHERITE_SWORD;
             case "Lumberjack" -> Material.NETHERITE_AXE;
             case "Farmer" -> Material.NETHERITE_HOE;
@@ -52,7 +52,7 @@ public class JobsPage implements InventoryHolder {
         switch (job){
             case "Miner":
                 return "Adds haste "+leveltouse;
-            case "Fisher":
+            case "Fisherman":
                 return "Adds luck "+leveltouse;
             case "Warrior":
                 return "Adds strength "+leveltouse/2;
@@ -129,7 +129,7 @@ public class JobsPage implements InventoryHolder {
         // Create an Inventory with 9 slots, `this` here is our InventoryHolder.
         this.inventory = plugin.getServer().createInventory(this, 27,"Select Job To Work:");
         int player_Miner = 1;
-        int player_Fisher = 1;
+        int player_Fisherman = 1;
         int player_Warrior = 1;
         int player_Lumberjack = 1;
         int player_Farmer = 1;
@@ -156,7 +156,7 @@ public class JobsPage implements InventoryHolder {
             this.inventory.setItem(slot++, glass);
         }
 
-        if (slot < 27) this.inventory.setItem(slot++, getItemStackToGui("Fisher", player_Fisher));
+        if (slot < 27) this.inventory.setItem(slot++, getItemStackToGui("Fisherman", player_Fisherman));
         if (slot < 27) this.inventory.setItem(slot++, getItemStackToGui("Warrior", player_Warrior));
         if (slot < 27) this.inventory.setItem(slot++, getItemStackToGui("Lumberjack", player_Lumberjack));
         if (slot < 27) this.inventory.setItem(slot++, getItemStackToGui("Farmer", player_Farmer));

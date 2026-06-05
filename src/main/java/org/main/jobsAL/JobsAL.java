@@ -14,7 +14,12 @@ public final class JobsAL extends JavaPlugin {
     public void onEnable() {
         JobsFile.plugin=this;
         Bukkit.getPluginManager().registerEvents(new JobsPage_Listener(), this);
+        Bukkit.getPluginManager().registerEvents(new JobBossBarClean(), this);
         Bukkit.getPluginManager().registerEvents(new MinerJob(), this);
+        Bukkit.getPluginManager().registerEvents(new Fisherman(), this);
+        Bukkit.getPluginManager().registerEvents(new WarriorJob(), this);
+        Bukkit.getPluginManager().registerEvents(new LumberjackJob(), this);
+        Bukkit.getPluginManager().registerEvents(new FarmerJob(), this);
         getLifecycleManager().registerEventHandler(
                 LifecycleEvents.COMMANDS,
                 event -> {

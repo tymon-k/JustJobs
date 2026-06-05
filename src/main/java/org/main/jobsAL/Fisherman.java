@@ -7,7 +7,8 @@ import org.bukkit.event.player.PlayerFishEvent;
 
 import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
 
-public class FisherJob implements Listener {
+public class Fisherman implements Listener {
+    static int[] levelUp = {2000,5000,8000,12000,18000,24000,28000,30000,40000,50000};
     @EventHandler
     public void onFish(PlayerFishEvent event) {
 
@@ -17,10 +18,11 @@ public class FisherJob implements Listener {
             return;
 
         if (event.getState() == PlayerFishEvent.State.CAUGHT_FISH) {
-
+            double chance = event.getHook().getBiteChance()*100;
             int xp = JobsFile.GetPlayerXp(player,"Fisherman");
 
-            xp += 10;
+            xp += (int) Math.sqrt(10000-chance*chance)*5;
+            JobsFile.SetPlayerXp(player,"Fisherman",xp);
 
             ShowXpAndLevelAndJob(
                     player,
