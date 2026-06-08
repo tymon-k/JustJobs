@@ -8,18 +8,32 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import static org.main.jobsAL.JobsFile.plugin;
+
 public final class JobsAL extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        JobsFile.plugin=this;
-        Bukkit.getPluginManager().registerEvents(new JobsPage_Listener(), this);
+        plugin=this;
+        Bukkit.getPluginManager().registerEvents(new JobsPageListener(), this);
         Bukkit.getPluginManager().registerEvents(new JobBossBarClean(), this);
         Bukkit.getPluginManager().registerEvents(new MinerJob(), this);
-        Bukkit.getPluginManager().registerEvents(new Fisherman(), this);
+        Bukkit.getPluginManager().registerEvents(new FishermanJob(), this);
         Bukkit.getPluginManager().registerEvents(new WarriorJob(), this);
         Bukkit.getPluginManager().registerEvents(new LumberjackJob(), this);
         Bukkit.getPluginManager().registerEvents(new FarmerJob(), this);
+        Bukkit.getPluginManager().registerEvents(new BuilderJob(), this);
+        Bukkit.getPluginManager().registerEvents(new TraderJob(), this);
+        Bukkit.getPluginManager().registerEvents(new ExplorerJob(), this);
+        Bukkit.getPluginManager().registerEvents(new LumberjackEffects(), this);
+        Bukkit.getPluginManager().registerEvents(new FarmerEffects(), this);
+        Bukkit.getScheduler().runTaskTimer(plugin, () -> {
+
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                JobsEffects.giveEffectForJob(player);
+            }
+
+        }, 0L, 1L);
         getLifecycleManager().registerEventHandler(
                 LifecycleEvents.COMMANDS,
                 event -> {

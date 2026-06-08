@@ -2,9 +2,6 @@ package org.main.jobsAL;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemFlag;
@@ -16,17 +13,17 @@ import java.util.Arrays;
 public class JobsPage implements InventoryHolder {
     private String levelToProgressBar(int level){
         return switch (level) {
-            case 1 -> "§7|§1--§9--§5--§c--§4--";
-            case 2 -> "§7|§1█-§9--§5--§c--§4--";
-            case 3 -> "§7|§1██§9--§5--§c--§4--";
-            case 4 -> "§7|§1██§9█-§5--§c--§4--";
-            case 5 -> "§7|§1██§9██§5--§c--§4--";
-            case 6 -> "§7|§1██§9██§5█-§c--§4--";
-            case 7 -> "§7|§1██§9██§5██§c--§4--";
-            case 8 -> "§7|§1██§9██§5██§c█-§4--";
-            case 9 -> "§7|§1██§9██§5██§c██§4--";
-            case 10 -> "§7|§1██§9██§5██§c██§4█-";
-            case 11 -> "§7|§1██§9██§5██§c██§4██";
+            case 0 -> "§7|§1--§9--§5--§c--§4--§7|";
+            case 1 -> "§7|§1█-§9--§5--§c--§4--§7|";
+            case 2 -> "§7|§1██§9--§5--§c--§4--§7|";
+            case 3 -> "§7|§1██§9█-§5--§c--§4--§7|";
+            case 4 -> "§7|§1██§9██§5--§c--§4--§7|";
+            case 5 -> "§7|§1██§9██§5█-§c--§4--§7|";
+            case 6 -> "§7|§1██§9██§5██§c--§4--§7|";
+            case 7 -> "§7|§1██§9██§5██§c█-§4--§7|";
+            case 8 -> "§7|§1██§9██§5██§c██§4--§7|";
+            case 9 -> "§7|§1██§9██§5██§c██§4█-§7|";
+            case 10 -> "§7|§1██§9██§5██§c██§4██§7|";
             default -> "Error report to the admin!";
         };
     }
@@ -45,81 +42,43 @@ public class JobsPage implements InventoryHolder {
         };
     }
     private String levelAndJobToLore(String job,int level){
-        int leveltouse = level-1;
-        if (leveltouse == 0){
-            return "No bonus at this level";
-        }
         switch (job){
             case "Miner":
-                return "Adds haste "+leveltouse;
+                return "Adds haste "+ level;
             case "Fisherman":
-                return "Adds luck "+leveltouse;
+                return "Adds luck "+ level;
             case "Warrior":
-                return "Adds strength "+leveltouse/2;
+                return "Adds strength "+ level /2;
             case "Lumberjack":
-                switch (leveltouse){
-                    case 1:
-                        return "10% to place tree sapling";
-                    case 2:
-                        return "20% to place tree sapling";
-                    case 3:
-                        return "30% to place tree sapling";
-                    case 4:
-                        return "40% to place tree sapling";
-                    case 5:
-                        return "50% to place tree sapling";
-                    case 6:
-                        return "70% to place tree sapling";
-                    case 7:
-                        return "80% to place tree sapling";
-                    case 8:
-                        return "100% to place tree sapling";
-                    default:
-                        return "No bonus at this level";
-                }
+                return level*10+"% to place tree sapling";
             case "Farmer":
-                switch (leveltouse){
-                    case 1:
-                        return "10% to place seeds";
-                    case 2:
-                        return "20% to place seeds";
-                    case 3:
-                        return "30% to place seeds";
-                    case 4:
-                        return "40% to place seeds";
-                    case 5:
-                        return "50% to place seeds";
-                    case 6:
-                        return "70% to place seeds";
-                    case 7:
-                        return "80% to place seeds";
-                    case 8:
-                        return "100% to place seeds";
-                    default:
-                        return "No bonus at this level";
-                }
+                return level*10+"% to place seeds";
             case "Builder":
-                return "Adds safe fall distance +"+leveltouse*2+" blocks";
+                return "Adds safe fall distance +"+ level *2+" blocks";
             case "Trader":
-                return "Adds hero of the village "+leveltouse;
+                return "Adds hero of the village "+ level;
             case "Explorer":
-                return "Adds speed "+leveltouse;
+                return "Adds speed "+ level;
             default:
                 return "Error! Report to the admin!";
         }
     }
-    private ItemStack getItemStackToGui(String job,int level){
-        ItemStack item = new ItemStack(jobToMaterialEnum(job),level);
+    private ItemStack getItemStackToGui(String job, int level) {
+
+
+        ItemStack item = new ItemStack(jobToMaterialEnum(job), level+1);
 
         ItemMeta meta = item.getItemMeta();
 
-        meta.setDisplayName("§2"+job+"!");
+        meta.setDisplayName("§2" + job + "!");
 
         meta.setLore(Arrays.asList(
                 levelToProgressBar(level),
-                "§b"+levelAndJobToLore(job,level)
+                "§b" + levelAndJobToLore(job, level)
         ));
+
         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+
         item.setItemMeta(meta);
         return item;
     }
@@ -128,14 +87,14 @@ public class JobsPage implements InventoryHolder {
     public JobsPage(JobsAL plugin, Player player) {
         // Create an Inventory with 9 slots, `this` here is our InventoryHolder.
         this.inventory = plugin.getServer().createInventory(this, 27,"Select Job To Work:");
-        int player_Miner = 1;
-        int player_Fisherman = 1;
-        int player_Warrior = 1;
-        int player_Lumberjack = 1;
-        int player_Farmer = 1;
-        int player_Builder = 1;
-        int player_Trader = 1;
-        int player_Explorer = 1;
+        int player_Miner = JobsFile.GetPlayerLevel(player,"Miner");
+        int player_Fisherman = JobsFile.GetPlayerLevel(player,"Fisherman");
+        int player_Warrior = JobsFile.GetPlayerLevel(player,"Warrior");
+        int player_Lumberjack = JobsFile.GetPlayerLevel(player,"Lumberjack");
+        int player_Farmer = JobsFile.GetPlayerLevel(player,"Farmer");
+        int player_Builder = JobsFile.GetPlayerLevel(player,"Builder");
+        int player_Trader = JobsFile.GetPlayerLevel(player,"Trader");
+        int player_Explorer = JobsFile.GetPlayerLevel(player,"Explorer");
         ItemStack glass = new ItemStack(Material.BLACK_STAINED_GLASS_PANE, 1);
 
         int slot = 0;

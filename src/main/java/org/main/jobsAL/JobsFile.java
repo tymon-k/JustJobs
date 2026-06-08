@@ -79,9 +79,12 @@ public class JobsFile {
         File file = new File(plugin.getDataFolder(), "playersData.yml");
 
         YamlConfiguration data = YamlConfiguration.loadConfiguration(file);
-
-        return data.getInt(
-                player.getUniqueId().toString()+"."+job+".level"
-        );
+        int level = 1;
+        if (data.contains(player.getUniqueId().toString()+"."+job+".level")){
+            level = data.getInt(
+                    player.getUniqueId().toString()+"."+job+".level"
+            );
+        }
+        return level;
     }
 }

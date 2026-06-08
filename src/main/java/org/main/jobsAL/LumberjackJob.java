@@ -3,6 +3,7 @@ package org.main.jobsAL;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
@@ -11,6 +12,7 @@ import java.util.Objects;
 import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
 
 public class LumberjackJob implements Listener {
+    @EventHandler
     public static void onBlockBreak(BlockBreakEvent event) {
         Player player = event.getPlayer();
         Block block = event.getBlock();
@@ -19,17 +21,17 @@ public class LumberjackJob implements Listener {
             return;
         }
         switch (blockType){
-            case Material.ACACIA_WOOD:
-            case Material.BIRCH_WOOD:
-            case Material.CHERRY_WOOD:
-            case Material.DARK_OAK_WOOD:
-            case Material.JUNGLE_WOOD:
-            case Material.MANGROVE_WOOD:
-            case Material.OAK_WOOD:
-            case Material.PALE_OAK_WOOD:
-            case Material.SPRUCE_WOOD:
+            case Material.ACACIA_LOG:
+            case Material.BIRCH_LOG:
+            case Material.CHERRY_LOG:
+            case Material.DARK_OAK_LOG:
+            case Material.JUNGLE_LOG:
+            case Material.MANGROVE_LOG:
+            case Material.OAK_LOG:
+            case Material.PALE_OAK_LOG:
+            case Material.SPRUCE_LOG:
                 JobsFile.SetPlayerXp(player,"Lumberjack",JobsFile.GetPlayerXp(player,"Lumberjack")+75);
-                ShowXpAndLevelAndJob(player,"Miner",JobsFile.GetPlayerLevel(player,"Miner"),JobsFile.GetPlayerXp(player,"Miner"));
+                ShowXpAndLevelAndJob(player,"Lumberjack",JobsFile.GetPlayerLevel(player,"Lumberjack"),JobsFile.GetPlayerXp(player,"Lumberjack"));
         }
     }
 }
