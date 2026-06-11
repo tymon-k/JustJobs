@@ -26,7 +26,7 @@ public class ExplorerJob implements Listener {
         }
 
         Player player = event.getPlayer();
-        if (Objects.equals(JobsFile.GetPlayerJob(player), "Explorer")) return;
+        if (!Objects.equals(JobsFile.GetPlayerJob(player), "Explorer")) return;
         Location last = lastCheckpoint.get(player.getUniqueId());
 
         if (last == null) {

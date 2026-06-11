@@ -25,7 +25,6 @@ public class JobsPageListener implements Listener {
 
         String name = meta.getDisplayName();
 
-        // usuwa kolory i !
         name = name.replace("!", "").trim();
 
         player.closeInventory();

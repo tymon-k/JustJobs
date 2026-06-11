@@ -2,3 +2,8 @@ name: JobsAL
 version: '1.0'
 main: org.main.jobsAL.JobsAL
 api-version: '26.1.2'
+dependencies:
+  server:
+    Vault:
+      load: BEFORE
+      required: true

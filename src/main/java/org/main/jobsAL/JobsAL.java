@@ -15,6 +15,7 @@ public final class JobsAL extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin=this;
+        VaultAPI.setupEconomy(plugin);
         Bukkit.getPluginManager().registerEvents(new JobsPageListener(), this);
         Bukkit.getPluginManager().registerEvents(new JobBossBarClean(), this);
         Bukkit.getPluginManager().registerEvents(new MinerJob(), this);
@@ -27,6 +28,7 @@ public final class JobsAL extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ExplorerJob(), this);
         Bukkit.getPluginManager().registerEvents(new LumberjackEffects(), this);
         Bukkit.getPluginManager().registerEvents(new FarmerEffects(), this);
+        Bukkit.getPluginManager().registerEvents(new AcceptPageListener(), this);
         Bukkit.getScheduler().runTaskTimer(plugin, () -> {
 
             for (Player player : Bukkit.getOnlinePlayers()) {
@@ -47,6 +49,19 @@ public final class JobsAL extends JavaPlugin {
                                                     player.openInventory(page.getInventory());
                                                     return 1;
                                                 })
+                                    ).then(
+                                            Commands.literal("level")
+                                                    .executes(ctx -> {
+                                                        LevelToVault.ExchangeLevelToVault((Player) ctx.getSource().getSender());
+                                                        return 1;
+                                                    })
+                                    )
+                                    .then(
+                                            Commands.literal("getMoney")
+                                                    .executes(ctx -> {
+                                                        ctx.getSource().getSender().sendMessage(Double.toString(VaultAPI.getPlayerMoney((Player) ctx.getSource().getSender())));
+                                                        return 1;
+                                                    })
                                     )
                                     .build()
                     );
