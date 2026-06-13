@@ -1,23 +1,13 @@
-package org.main.jobsAL;
+package org.main.jobsAndPoints;
 
-import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.HashMap;
-import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
-
-import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
 
 public class JobsEffects {
     private static final HashMap<UUID, String> lastJob = new HashMap<>();

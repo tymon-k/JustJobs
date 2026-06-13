@@ -1,4 +1,4 @@
-package org.main.jobsAL;
+package org.main.jobsAndPoints;
 
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;

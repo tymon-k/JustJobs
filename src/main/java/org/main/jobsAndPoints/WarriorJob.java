@@ -1,4 +1,4 @@
-package org.main.jobsAL;
+package org.main.jobsAndPoints;
 
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Player;
@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 
-import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
+import static org.main.jobsAndPoints.Job.ShowXpAndLevelAndJob;
 
 public class WarriorJob implements Listener {
     @EventHandler

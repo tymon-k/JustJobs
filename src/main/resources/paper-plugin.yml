@@ -1,7 +1,8 @@
-name: JobsAL
+name: JobsAndPoints
 version: '1.0'
-main: org.main.jobsAL.JobsAL
+main: org.main.jobsAndPoints.JobsAndPoints
 api-version: '26.1.2'
+softdepend: [PlaceholderAPI]
 dependencies:
   server:
     Vault:

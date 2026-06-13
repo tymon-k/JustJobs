@@ -1,4 +1,4 @@
-package org.main.jobsAL;
+package org.main.jobsAndPoints;
 
 import org.bukkit.*;
 import org.bukkit.boss.BarColor;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static org.main.jobsAL.JobsFile.plugin;
+import static org.main.jobsAndPoints.JobsFile.plugin;
 
 public class LevelToVault {
 
@@ -73,9 +73,7 @@ public class LevelToVault {
                     return b;
                 });
 
-                bar.setTitle("§cDrain §7" + job +
-                        " §8| §eLevel: " + currentLevel +
-                        " §7XP: " + currentXp);
+                bar.setTitle("§2" + job + " §bxp: " + currentXp + " §9Level: " + currentLevel);
 
                 bar.setProgress(progress);
 
@@ -92,7 +90,7 @@ public class LevelToVault {
         }.runTaskTimer(plugin, 0L, 1L);
     }
 
-    public static void ExchangeLevelToVault(Player player) {
+    public static void ExchangeLevelToVault(Player player, String job) {
         AcceptPage page = new AcceptPage(player);
 
         page.ask(player, result -> {
@@ -112,7 +110,7 @@ public class LevelToVault {
                 world.strikeLightningEffect(loc);
                 world.strikeLightningEffect(loc);
 
-                animateDrain(player, "Miner");
+                animateDrain(player, job);
             } else {
                 player.sendMessage("Wybrano NO");
             }
