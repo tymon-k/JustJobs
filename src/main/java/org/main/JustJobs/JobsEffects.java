@@ -21,7 +21,6 @@ public class JobsEffects {
         String oldJob = lastJob.get(uuid);
 
         if (currentJob == null) return;
-
         if (oldJob == null) {
             lastJob.put(uuid, currentJob);
             oldJob = currentJob;

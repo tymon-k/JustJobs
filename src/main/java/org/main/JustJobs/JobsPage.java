@@ -66,7 +66,7 @@ public class JobsPage implements InventoryHolder {
     private ItemStack getItemStackToGui(String job, int level) {
 
 
-        ItemStack item = new ItemStack(jobToMaterialEnum(job), level+1);
+        ItemStack item = new ItemStack(jobToMaterialEnum(job), 1);
 
         ItemMeta meta = item.getItemMeta();
 
