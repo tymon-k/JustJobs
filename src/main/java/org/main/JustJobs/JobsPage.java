@@ -1,4 +1,4 @@
-package org.main.jobsAL;
+package org.main.JustJobs;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -84,7 +84,7 @@ public class JobsPage implements InventoryHolder {
     }
     private final Inventory inventory;
 
-    public JobsPage(JobsAL plugin, Player player) {
+    public JobsPage(JustJobs plugin, Player player) {
         // Create an Inventory with 9 slots, `this` here is our InventoryHolder.
         this.inventory = plugin.getServer().createInventory(this, 27,"Select Job To Work:");
         int player_Miner = JobsFile.GetPlayerLevel(player,"Miner");

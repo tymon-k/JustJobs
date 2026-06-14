@@ -1,4 +1,4 @@
-package org.main.jobsAL;
+package org.main.JustJobs;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -9,7 +9,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 
 import java.util.Objects;
 
-import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
+import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class LumberjackJob implements Listener {
     @EventHandler

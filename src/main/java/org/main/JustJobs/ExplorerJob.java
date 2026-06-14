@@ -1,9 +1,7 @@
-package org.main.jobsAL;
+package org.main.JustJobs;
 
-import io.papermc.paper.event.player.PlayerTradeEvent;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -12,7 +10,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 
-import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
+import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class ExplorerJob implements Listener {
     private final HashMap<UUID, Location> lastCheckpoint = new HashMap<>();
@@ -26,7 +24,7 @@ public class ExplorerJob implements Listener {
         }
 
         Player player = event.getPlayer();
-        if (Objects.equals(JobsFile.GetPlayerJob(player), "Explorer")) return;
+        if (!Objects.equals(JobsFile.GetPlayerJob(player), "Explorer")) return;
         Location last = lastCheckpoint.get(player.getUniqueId());
 
         if (last == null) {

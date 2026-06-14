@@ -1,4 +1,4 @@
-package org.main.jobsAL;
+package org.main.JustJobs;
 
 import io.papermc.paper.event.player.PlayerTradeEvent;
 import org.bukkit.entity.Player;
@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 
 import java.util.Objects;
 
-import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
+import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class TraderJob implements Listener {
     @EventHandler
