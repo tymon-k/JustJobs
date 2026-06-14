@@ -55,6 +55,6 @@
 
 ### dependencies:
 - Vault
-- Economy Manager
+- Economy Manager (for example: EssentialsX Economy)
 
 
