@@ -1,11 +1,11 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-import static org.main.jobsAndPoints.Job.ShowXpAndLevelAndJob;
+import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class BuilderJob implements Listener {
     @EventHandler

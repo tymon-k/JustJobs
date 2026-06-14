@@ -1,4 +1,4 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import org.bukkit.*;
 import org.bukkit.boss.BarColor;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static org.main.jobsAndPoints.JobsFile.plugin;
+import static org.main.JustJobs.JobsFile.plugin;
 
 public class LevelToVault {
 

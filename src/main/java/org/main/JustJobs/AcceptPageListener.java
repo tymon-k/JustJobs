@@ -1,4 +1,4 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,7 +8,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-import static org.main.jobsAndPoints.AcceptPage.waiting;
+import static org.main.JustJobs.AcceptPage.waiting;
 
 public class AcceptPageListener implements Listener {
 

@@ -1,4 +1,4 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static org.main.jobsAndPoints.JobsFile.plugin;
+import static org.main.JustJobs.JobsFile.plugin;
 
 public class AcceptPage implements InventoryHolder, Listener {
     private final Inventory inventory;

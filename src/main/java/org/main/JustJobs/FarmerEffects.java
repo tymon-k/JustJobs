@@ -1,4 +1,4 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-import static org.main.jobsAndPoints.JobsEffects.random;
+import static org.main.JustJobs.JobsEffects.random;
 
 public class FarmerEffects implements Listener {
 

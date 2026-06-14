@@ -1,4 +1,4 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.entity.Player;

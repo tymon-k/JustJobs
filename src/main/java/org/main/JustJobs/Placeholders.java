@@ -1,16 +1,16 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static org.main.jobsAndPoints.Job.levelUp;
+import static org.main.JustJobs.Job.levelUp;
 
 public class Placeholders extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getIdentifier() {
-        return "JobsAndPoints";
+        return "JustJobs";
     }
 
     @Override

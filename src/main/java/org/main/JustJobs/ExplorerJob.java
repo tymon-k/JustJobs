@@ -1,4 +1,4 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import java.util.UUID;
 
-import static org.main.jobsAndPoints.Job.ShowXpAndLevelAndJob;
+import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class ExplorerJob implements Listener {
     private final HashMap<UUID, Location> lastCheckpoint = new HashMap<>();

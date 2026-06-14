@@ -1,4 +1,4 @@
-package org.main.jobsAndPoints;
+package org.main.JustJobs;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -7,8 +7,8 @@ import java.io.File;
 import java.io.IOException;
 
 public class JobsFile {
-    static JobsAndPoints plugin;
-    public JobsFile(JobsAndPoints plugin){
+    static JustJobs plugin;
+    public JobsFile(JustJobs plugin){
         JobsFile.plugin =plugin;
     }
     public static void SetPlayerLevel(Player player,String job, int level){
