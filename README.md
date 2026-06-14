@@ -53,3 +53,8 @@
 |:----------:|:------:|:------:|
 |   26.1.2   | Paper  |   ✅    |
 
+### dependencies:
+- Vault
+- Economy Manager
+
+
