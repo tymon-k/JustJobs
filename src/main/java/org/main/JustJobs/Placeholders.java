@@ -4,7 +4,6 @@ import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static org.main.JustJobs.Job.levelUp;
 
 public class Placeholders extends PlaceholderExpansion {
 
@@ -30,7 +29,7 @@ public class Placeholders extends PlaceholderExpansion {
 
     @Override
     public String onPlaceholderRequest(Player player, @NotNull String params) {
-
+        int[] levelUp = ConfigFile.GetLevelUpTable();
         if (player == null) return "";
 
         // %JobsAndPoints_selectedJob%
