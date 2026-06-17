@@ -42,6 +42,11 @@
 - %JobsAndPoints_level_{JobName}% to get level in the chosen job
 - %JobsAndPoints_fullXp_{JobName}% to get xp including other levels in the chosen job
 - %JobsAndPoints_selectedJob% selected job by player
+### Config (config.yaml):
+- ```LevelUpXp``` how much xp someone must have to level up
+- ```LevelToMoney``` how much player will get money from exchanging from level
+- ```ExchangeSpeed``` how much from player will be taken xp when exchanging (per tick)
+- ```StartExchangeLevel``` how much player must have level to start exchanging
 
 ###  Permissions:
   - jobs.levelToMoney (```/jobs levelToMoney```)

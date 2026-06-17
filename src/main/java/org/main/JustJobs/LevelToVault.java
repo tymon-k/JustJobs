@@ -18,7 +18,7 @@ public class LevelToVault {
 
         final Map<UUID, BossBar> bars = new HashMap<>();
 
-        int[] levelUp = Job.levelUp;
+        int[] levelUp = ConfigFile.GetLevelUpTable();
 
         int level = JobsFile.GetPlayerLevel(player, job);
         int xp = JobsFile.GetPlayerXp(player, job);
@@ -31,7 +31,7 @@ public class LevelToVault {
             int currentLevel = level;
             int currentXp = xp;
 
-            int drainPerTick = 500;
+            int drainPerTick = ConfigFile.GetExchangeSpeed();
 
             @Override
             public void run() {
@@ -42,7 +42,7 @@ public class LevelToVault {
 
                 while (currentXp <= 0 && currentLevel > 0) {
                     currentLevel--;
-                    VaultAPI.addPlayerMoney(player, (double) levelUp[Math.min(currentLevel + 1, 9)] /10);
+                    VaultAPI.addPlayerMoney(player, (double) ConfigFile.GetLevelToMoneyTable()[Math.min(currentLevel + 1, 9)]);
                     player.getWorld().strikeLightningEffect(player.getLocation());
                     int prevLevelMax = levelUp[Math.max(0, currentLevel)];
                     currentXp += prevLevelMax;

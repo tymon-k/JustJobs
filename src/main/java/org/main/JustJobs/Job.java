@@ -16,10 +16,9 @@ import java.util.UUID;
 public class Job {
     public static final Map<UUID, BossBar> bars = new HashMap<>();
     private static final Map<UUID, BukkitTask> hideTasks = new HashMap<>();
-    static int[] levelUp = {2000,5000,8000,12000,18000,24000,28000,30000,40000,50000};
 
     public static void ShowXpAndLevelAndJob(Player player, String job, int level, int xp) {
-
+        int[] levelUp = ConfigFile.GetLevelUpTable();
         while (level < levelUp.length && xp >= levelUp[level]) {
             xp -= levelUp[level];
             level++;

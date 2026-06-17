@@ -12,7 +12,7 @@ import java.util.Objects;
 import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class MinerJob implements Listener {
-    static int[] levelUp = {2000,5000,8000,12000,18000,24000,28000,30000,40000,50000};
+
 
     @EventHandler
     public static void onBlockBreak(BlockBreakEvent event) {

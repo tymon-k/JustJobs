@@ -30,7 +30,7 @@ public final class JustJobs extends JavaPlugin {
                             .executes(ctx -> {
                                 Player player = (Player) ctx.getSource().getSender();
 
-                                if (JobsFile.GetPlayerLevel(player, job) >= 10) {
+                                if (JobsFile.GetPlayerLevel(player, job) >= ConfigFile.GetStartExchangeLevel()) {
                                     LevelToVault.ExchangeLevelToVault(player, job);
                                 } else {
                                     player.sendMessage("§cYou don't have enough level!");
@@ -66,6 +66,7 @@ public final class JustJobs extends JavaPlugin {
             }
 
         }, 0L, 20L);
+        ConfigFile.SetupConfigFile();
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new Placeholders().register();
         }
