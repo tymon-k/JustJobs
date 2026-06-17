@@ -1,4 +1,4 @@
-package org.main.jobsAL;
+package org.main.JustJobs;
 
 
 import org.bukkit.entity.Player;

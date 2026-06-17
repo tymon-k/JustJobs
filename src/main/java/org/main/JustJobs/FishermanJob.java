@@ -1,11 +1,11 @@
-package org.main.jobsAL;
+package org.main.JustJobs;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
 
-import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
+import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class FishermanJob implements Listener {
     static int[] levelUp = {2000,5000,8000,12000,18000,24000,28000,30000,40000,50000};

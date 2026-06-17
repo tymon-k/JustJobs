@@ -1,22 +1,15 @@
-package org.main.jobsAL;
+package org.main.JustJobs;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.boss.BarColor;
-import org.bukkit.boss.BarStyle;
-import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
-import java.util.UUID;
 
-import static org.main.jobsAL.Job.ShowXpAndLevelAndJob;
+import static org.main.JustJobs.Job.ShowXpAndLevelAndJob;
 
 public class MinerJob implements Listener {
     static int[] levelUp = {2000,5000,8000,12000,18000,24000,28000,30000,40000,50000};
